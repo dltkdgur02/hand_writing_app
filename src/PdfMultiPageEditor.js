@@ -191,7 +191,8 @@ const PdfMultiPageEditor = () => {
                 ctx.globalCompositeOperation = 'multiply'; // ✨ 핵심 변경: multiply 모드로 설정
                 ctx.globalAlpha = 0.6;                      // ✨ 적절한 투명도
                 ctx.strokeStyle = 'rgba(255, 255, 0, 1)';   // ✨ 불투명 노란색
-                ctx.lineWidth = 20;
+                ctx.lineWidth = widthRef.current; // ✅ 사용자 지정 굵기 반영
+
             }
             // 픽셀 지우개 모드
             else if (mode === 'pixel') {
